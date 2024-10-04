@@ -13,33 +13,30 @@ public class Main {
     public static void main(String[] args) {
 
         Movie myMovie = new Movie("Encanto", 2021);
-        myMovie.setYear(2021);
         myMovie.setDurationInMinutes(120);
-        myMovie.setPlanInclude(true);
 
         myMovie.showTechnicalSheet();
-        myMovie.evaluate(10);
-        myMovie.evaluate(10);
         myMovie.evaluate(8);
-        myMovie.evaluate(7.1);
+        myMovie.evaluate(5);
+        myMovie.evaluate(10);
 
         System.out.println("El total de la evaluacion de la pelicula es " + myMovie.getTotalEvaluation());
         System.out.println("Y la clasificacion media de la pelicula es " + myMovie.calculateMedia());
 
 
-        Serie casaDragon = new Serie("Casa Dragon",  2022);
-        casaDragon.setSeason(1);
-        casaDragon.setMinutesByEpisode(50);
-        casaDragon.setEpisodeBySeason(10);
-        casaDragon.showTechnicalSheet();
-        System.out.println("La duracion en minutos de la serie " + casaDragon.getName() + "es " + casaDragon.getDurationInMinutes() +  " minutos");
+        Serie lost = new Serie("Lost",  2022);
+        lost.setSeason(10);
+        lost.setMinutesByEpisode(50);
+        lost.setEpisodeBySeason(10);
+        lost.showTechnicalSheet();
+        System.out.println("La duracion en minutos de la serie " + lost.getName() + "es " + lost.getDurationInMinutes() +  " minutos");
 
         Movie anotherMovie = new Movie("Avatar", 1998);
         anotherMovie.setDurationInMinutes(200);
 
         TimeCalculate calculate = new TimeCalculate();
         calculate.include(myMovie);
-        calculate.include(casaDragon);
+        calculate.include(lost);
         calculate.include(anotherMovie);
         System.out.println("Tiempo necesario para ver tus titulos en vacaciones " + calculate.getTotalTime() + " minutos");
 
@@ -49,8 +46,8 @@ public class Main {
         Episode episode = new Episode();
         episode.setId(1);
         episode.setTitle("La casa Targaryen");
-        episode.setSerie(casaDragon);
-        episode.setTotalVisualizations(10);
+        episode.setSerie(lost);
+        episode.setTotalVisualizations(300);
 
         recomendationFilter.filter(episode);
 

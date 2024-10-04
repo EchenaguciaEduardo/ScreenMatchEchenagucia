@@ -38,4 +38,9 @@ public class Serie extends Tittle  {
     public void setMinutesByEpisode(int minutesByEpisode) {
         this.minutesByEpisode = minutesByEpisode;
     }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getName() + "(" + this.getYear() + ")";
+    }
 }

@@ -1,18 +1,19 @@
 package com.echenagucia.screenmatch.models;
 
-public class Tittle {
+public class Tittle implements Comparable<Tittle> {
 
     private String name;
 
     private int year;
 
-    private int durationInMinutes;
-
     private boolean planInclude;
+
+    private double sumEvaluation;
 
     private int totalEvaluation;
 
-    private double sumEvaluation;
+    private int durationInMinutes;
+
 
     public Tittle(String name, int year) {
         this.name = name;
@@ -72,5 +73,10 @@ public class Tittle {
 
     public double calculateMedia(){
         return sumEvaluation / totalEvaluation;
+    }
+
+    @Override
+    public int compareTo(Tittle anotherTittle) {
+        return this.getName().compareTo(anotherTittle.getName());
     }
 }
